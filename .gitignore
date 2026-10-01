@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+
+data/
+artifacts/models/
+
+mlruns/
+
+.pytest_cache/
+.coverage

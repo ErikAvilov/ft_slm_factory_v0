@@ -1,0 +1,22 @@
+project:
+  name: ft_slm_factory_v0
+  task: intent_classification
+
+dataset:
+  name: banking77
+  train_samples: 1200
+  test_samples: 300
+
+model:
+  name: Qwen/Qwen2.5-0.5B-Instruct
+
+training:
+  epochs: 2
+  learning_rate: 0.0002
+
+lora:
+  rank: 8
+  alpha: 16
+
+evaluation:
+  minimum_f1: 0.75
