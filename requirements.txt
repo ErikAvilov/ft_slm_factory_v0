@@ -1,3 +1,12 @@
-datasets<4.0.0
+datasets<4.0.0 # Huggingface ne supporte plus l'import avec python, donc on utilise une plus ancienne version.
 pyyaml
 pandas
+transformers
+peft
+trl
+accelerate
+# GTX 1080 (sm_61): installer via
+# pip install torch --index-url https://download.pytorch.org/whl/cu126
+# (pas cu128/cu130 — kernels Pascal absents)
+torch
+scikit-learn
