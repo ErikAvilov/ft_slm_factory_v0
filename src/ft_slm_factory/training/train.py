@@ -1,13 +1,11 @@
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments
+from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import LoraConfig
 from trl import SFTConfig, SFTTrainer
 
 import torch
 import torch.backends.python_native as python_native
 
-# GTX 1080 (Pascal): Triton n'a pas de kernels utilisables ici et tente
-# de recompiler un driver (besoin de python3.11-dev). On force ATen.
 python_native.triton.enabled = False
 
 
@@ -59,10 +57,9 @@ def main():
         device_map="auto",
     )
 
-    torch_dtype=torch.float16
 
     lora_config = LoraConfig(
-        r=8, # limité à 8 en raison de faible mémoire
+        r=8,
         lora_alpha=16,
         lora_dropout=0.05,
         target_modules=[
@@ -79,8 +76,8 @@ def main():
         num_train_epochs=1,
         per_device_train_batch_size=1, # Ma carte graphique est trop faible donc je mets 1
         gradient_accumulation_steps=8,
-        learning_rate=2e-4, # 0.0002 d"itération
-        max_length=128, # taille maximale de texte attendue
+        learning_rate=2e-4,
+        max_length=128, # taille maximale de token attendue
         fp16=True,
         logging_steps=10,
         save_strategy="epoch",
