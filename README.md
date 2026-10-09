@@ -17,10 +17,7 @@ Mon PC personnel n'étant pas une machine de guerre, c'est l'outil parfait.
 
 [TRL](https://huggingface.co/docs/trl/index) **(Transformers Reinforcement Learning)**: Fournit un ensemble d'outils spécialisés pour les LM. <br>
 Dans ce projet, j'utilise notamment SFTTrainer **(Supervised Fine-Tuning Trainer)** pour entraîner le modèle à partir de dataset où la bonne réponse est déjà connue. <br>
-Cela évite d'avoir à coder manuellement toute une boucle d'entraînement avec PyTorch. 
-
-[Accelerate](https://huggingface.co/docs/accelerate/index): Facilite la gestion du matériel disponible afin de mieux configurer l'entraînement d'un modèle. Excellent dans mon cas vu que j'entraîne le modèle localement grâce à une GTX1080 avec 8GO de VRAM. <br>
-Très utile si on cherche à entraîner un modèle sur plusieurs machines différentes, vu que cet outil s'y adapte facilement en quelque lignes de code.
+Cela évite d'avoir à coder manuellement toute une boucle d'entraînement avec PyTorch.
 
 [scikit-learn](https://scikit-learn.org/stable/): Spécialement prévu pour tester notre modèle entraîné, scikit-learn va comparer la liste des prédictions à la liste des vraies réponses pour calculer la précision ou le F1-score.
 
