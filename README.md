@@ -1,6 +1,6 @@
 # ft_slm_factory_v0
 
-Fine Tuning d'un SLM avec Unsloth et LoRA.
+Fine Tuning d'un SLM avec LoRA / PEFT.
 
 ## Outils pertinents :
 
